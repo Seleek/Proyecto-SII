@@ -5,10 +5,18 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">\
     <title>Coordinador</title>
     <link rel = "stylesheet" href = "../style">
+    <style>
+        :root {
+            --color-guinda: #621132;
+            --color-dorado: #9f7c45;
+            --color-azul-tec: #1b396a;
+            --color-fondo: #f8fafc;
+        }
+    </style>
     
 </head>
 <body>
-    <header style = "background-color: #621132">
+    <header style = "background-color: var(--color-guinda)">
         <div class="header-container">
             <div class = "brand">
                 <i class = "fas fa-user-tie"></i>
@@ -28,7 +36,7 @@
     </header>
     
     <main class = "container">
-        <div class = "card welcome-card" style="border-left: 4px solid #621132;">
+        <div class = "card welcome-card" style="border-left: 4px solid var(--color-guinda);">
             <h2>Panel de gestion academica</h2>
             <p>Bienvenido al panel de gestión académica. Aquí puedes administrar los aspectos relacionados con la coordinación académicas.</p>
         </div>
@@ -55,8 +63,8 @@
         <!-- Contenido de las pestañas -->
          <div class = "p-6">
             <div id = "horarios" class = "tab-content active space-y-6"></div>
-            <div class = "flex items-start gap-2 p-4 rounded-lg" style = "background-color: #fef3e7;">
-                <i class = "fas fa-exclamarion-circle mt-1" style = "color: var (--color-dorado);"></i>
+            <div class = "flex items-start gap-2 p-4 rounded-lg" style = "background-color: var(--color-fondo);">
+                <i class = "fas fa-exclamarion-circle mt-1" style = "color: var(--color-dorado);"></i>
                 <div>
                     <p class = "text-sm text-gray-800"> Registrar los horarios de alumnos</p>
                     </div>
@@ -72,7 +80,7 @@
             <div id = "alumno-data-container" class="hidden">
                 <div class = "bg-white border border-gray-200 rounded-lg overflow-hidden">
                     <table class = "w-full">
-                        <thead style = "background-color: var (--color-guinda);">
+                        <thead style = "background-color: var(--color-guinda);">
                             <tr>
                                 <th class = "px-4 py-3 text-left text-sm font-medium text-white">Materia</th>
                                 <th class = "px-4 py-3 text-left text-sm font-medium text-white">Grupo</th>
