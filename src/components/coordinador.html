@@ -52,25 +52,25 @@
     </style>
     
 </head>
-<body>
-    <header style = "background-color: var(--color-guinda)">
-        <div class="header-container">
-            <div class = "brand">
-                <i class = "fas fa-user-tie"></i>
-                <div>
-                    <h1>Sistema Integral de Informacion</h1>
-                    <p>Coordinador</p>
-                </div>
+<body class = "min-h-screen">
+    <div class = "flex flex-col md:flex-row min-h-screen">
+
+        <aside class = "w-full mid:w-64 sidebar text-white p-6 flex flex-col">
+            <div class = "mb-8">
+                <h1 class = "text-xl font-bold border-b border-white/20 pb-4">SII</h1>
             </div>
-            <div class = "user-profile">
-                <div class = "text-right">
-                    <p class = "user-name">ejemplo de nombre</p> <!-- Aquí se muestra el nombre del usuario --> 
-                    <p class = "user-email">coordinadoruniversidad.edu.mx</p> <!-- Aquí se muestra el correo del usuario -->
-                </div>
-                <button class = "btn-logout"><i class = "fas fa-sign-out-alt"></i> Cerrar sesión</button>
-            </div>
-        </div>
-    </header>
+            <nav class = "flex-grow space-y-4">
+                <div class = "flex items-center gap-3 p-2 bg-white/10 rounded">
+                    <i class = "fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </diSv>
+            </nav>
+            <button onclick = "alert ('Cerrando sesion...')" class = "mt-auto flex items-center gap-3 p-2 hover:bg-white/10 rounded transition">    
+                <i class = "fas fa-sign-out-alt"></i>
+                <span>Cerrar sesión</span>
+            </button>
+        </aside>
+
     
     <main class = "container">
         <div class = "card welcome-card" style="border-left: 4px solid var(--color-guinda);">
@@ -168,7 +168,7 @@
             <button class = "tab-btn"><i class = "fas fa-file-alt"></i>Reportes</button>
         </div>
 --> 
-        
+   </div>     
 </body>
 
 </html>
