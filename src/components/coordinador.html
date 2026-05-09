@@ -40,5 +40,26 @@
             <button class = "tab-btn"><i class = "fas fa-users"></i>Asignacion</button>
             <button class = "tab-btn"><i class = "fas fa-file-alt"></i>Reportes</button>
         </div>
+
+        <!-- Contenido de las pestañas -->
+         <div class = "p-6">
+            <div id = "horarios" class = "tab-content active space-y-6"></div>
+            <div class = "flex items-start gap-2 p-4 rounded-lg" style = "background-color: #fef3e7;">
+                <i class = "fas fa-exclamarion-circle mt-1" style = "color: var (--color-dorado);"></i>
+                <div>
+                    <p class = "text-sm text-gray-800"> Registrar los horarios de alumnos</p>
+                    </div>
+            </div>
+            <div>
+               <label for="alumno-select" class = "block text-sm font-medium mb-2 text-gray-800">Seleccionar alumno</label>
+               <select id="alumno-select" onchange = "updateAlumnoTable(this.value)" class = "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-900 outline-none">
+                <option value = "">Seleccionar alumno</option>
+                <option value="1" >Alumno 1</option>
+                <option value="2" >Alumno 2</option>
+               </select>
+            </div>
+         </div>
+         </div>
 </body>
+
 </html>
