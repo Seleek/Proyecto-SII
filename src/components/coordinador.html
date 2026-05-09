@@ -257,6 +257,35 @@
         document.getElementById(tabId).classList.add('active');
         document.getElementById('btn-' + tabId).classList.add('active');
     }
+    function updateAlumnoTable(val){
+        const container = document.getElementById('alumno-data-container');
+        const tbody = document.getElementById('horarios-tbody');
+        if(val){
+            container.classList.add('hidden');
+            return;
+        }
+
+        container.classList.remove('hidden');
+
+        const data = [
+            {materia:'Estructura de Datos', grupo:'A', semestre:'4', estado:'Inscrito'},
+            {materia:'Calculo Integral', grupo:'B', semestre:'6', estado:'Inscrito'},
+            {materia:'Programacion Web', grupo:'A', semestre:'2', estado:'Inscrito'}
+    ];
+        tbody.innerHTML = data.map((item, idx) => `
+            <tr style="background-color: ${idx % 2 === 0 ? 'white' : '#f5f5f5'}">
+                <td class="px-4 py-3 text-sm text-gray-800">${item.materia}</td>
+                <td class="px-4 py-3 text-sm text-gray-800">${item.grupo}</td>
+                <td class="px-4 py-3 text-sm text-gray-800">${item.semestre}</td>
+                <td class="px-4 py-3 text-sm">
+                    <span class="px-2 py-1 rounded-full text-xs" style="background-color:#d4edda; color:#155724;">
+                        ${item.estado}
+                    </span>
+                </td>
+            </tr>
+        `).join('');
+
+    }
    </script>     
 </body>
 
