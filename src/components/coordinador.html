@@ -90,6 +90,15 @@
                     <button onclick = "showTab('oferta')" id = "btn-oferta" class = "tab-btn flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
                         <i class = "fas fa-book-open"></i>
                         Oferta Academica
+                    </button>
+                    <button onclick = "showTab('asignacion')" id = "btn-asignacion" class = "tab-btn flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
+                        <i class = "fas fa-users"></i>
+                        Asignación
+                    </button>
+                    <button onclick = "showTab('ajustes')" id = "btn-ajustes" class = "tab-btn flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
+                        <i class = "fas fa-cog"></i>
+                        Ajustes Grupos
+                    </button>
                 </div>
             </div>
 
@@ -161,6 +170,44 @@
                 </div>
          </div>
          <button class = "px-6 py-2 rounded-lg btn-guinda font-medium"> Crear grupo </button>
+         </div>
+         
+        <div id = "asignacion" class = "tab-content space-y-6">
+            <div class = "flex items-start gap-2 p-4 rounded-lg" style = background-color:#fef3e7;>
+                <i class = "fas fa-exclamation-circle mt-1" style = "color:var (--color-dorado);"></i>
+                <div>
+                    <p class = "text-sm text-gray-800"> Asignar materias directamente a los alumnos</p>
+                </div>
+            </div>
+            <div class ="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class = "block text-sm font-medium mb-2 text-gray-800">Alumno</label>
+                    <select class = "w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <option>-- seleccione --</option>
+                    </select>
+                </div>
+                <div>
+                    <label class = "block text-sm font-medium mb-2 text-gray-800">Asignar materia</label>
+                    <select class = "w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <option>-- seleccione --</option>
+                    </select>
+                </div>
+        </div>
+
+         <div id = "ajustes" class = "tab-content space-y-6">
+            <div class = "flex-items-start gap-2 p-4 rounded-lg" style = "background-color:#e3f2fd;">
+                <i class = "fas fa-exclamation-circle mt-1" style = "color: var(--color-azul-tec);"></i>
+                <div>
+                    <p class = "text-sm text-gray-800"> Ajustar grupos y horarios designados</p>
+                </div>
+         </div>
+         <div class = "bg-white border-gray-200 rounded-lg p-4 flex justify-between items-center">
+            <div>
+                <h4 class = "font-medium text-lg"> Programacion web - Grupo A </h4>
+                <p class = "text-sm text-gray-600">Docente: Ing. Algara</p>
+            </div>
+            <button class = "px-4 py-2 rounded-lg text-white text-sm font-medium" style = "background-color: var(--color-dorado);">Editar</button>
+         </div>
          </div>
      <!--  <div class = "tabs-container">
             <button class = "tab-btn active"><i class = "fas fa-calendar"></i>Horarios</button>
