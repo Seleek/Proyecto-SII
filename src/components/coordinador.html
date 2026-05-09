@@ -84,27 +84,22 @@
                 <div class = "flex overflow-x-auto">
                     <button onclick = "showTab('horarios')" id = "btn-horarios" class = "tab-btn active flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
                         <i class = "fas fa-calendar-alt"></i>
-                        Horarios Alumnos
-                        
+                        Horarios Alumnos        
                     </button>
+                    <button onclick = "showTab('oferta')" id = "btn-oferta" class = "tab-btn flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
+                        <i class = "fas fa-book-open"></i>
+                        Oferta Academica
                 </div>
             </div>
-         </div>
-     <!--  <div class = "tabs-container">
-            <button class = "tab-btn active"><i class = "fas fa-calendar"></i>Horarios</button>
-            <button class = "tab-btn"><i class = "fas fa-book"></i>Oferta academica</button>
-            <button class = "tab-btn"><i class = "fas fa-users"></i>Asignacion</button>
-            <button class = "tab-btn"><i class = "fas fa-file-alt"></i>Reportes</button>
-        </div>
---> 
-        <!-- Contenido de las pestañas -->
+
+            <!-- Contenido de las pestañas -->
          <div class = "p-6">
-            <div id = "horarios" class = "tab-content active space-y-6"></div>
+            <div id = "horarios" class = "tab-content active space-y-6">
             <div class = "flex items-start gap-2 p-4 rounded-lg" style = "background-color: var(--color-fondo);">
                 <i class = "fas fa-exclamarion-circle mt-1" style = "color: var(--color-dorado);"></i>
                 <div>
                     <p class = "text-sm text-gray-800"> Registrar los horarios de alumnos</p>
-                    </div>
+                </div>
             </div>
             <div>
                <label for="alumno-select" class = "block text-sm font-medium mb-2 text-gray-800">Seleccionar alumno</label>
@@ -132,8 +127,48 @@
                 </div>
             </div>
             <button class = "px-6 py-2 rounded-lg btn-guinda font-medium"> registrar nuevo horario </button>
+         
          </div>
+
+         <div id = "oferta" class = "tab-content space-y-6">
+            <div class = "flex items-start gap-2 p-4 rounded-lg" style = "background-color: #f3f3e7;">
+                <i class = "fas fa-exclamation-circle mt-1" style="color: var(--color-dorado);"></i>
+                <div>
+                    <p class = "text-sm text-gray-800"> Gestionar la oferta académica</p>
+                </div>
+            </div>
+            <div class = "grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class = "block text-sm font-medium mb-2 text-gray-800">Materia</label>
+                    <select class = "w-full px-4 py2 border border-gray-300 rounded-lg">
+                        <option>Calculo diferencial</option>
+                    </select>
+                </div>
+                <div>
+                    <label class = "block text-sm font-medium mb-2 text-gray-800">Docente</label>
+                    <select class = "w-full px-4 py2 border border-gray-300 rounded-lg">
+                        <option>Ing. Algara</option>
+                    </select>
+                </div>
+                <div>
+                    <label class = "block text-sm font-medium mb-2 text-gray-800">Semestre</label>
+                    <input type = "text" placeholder = "2026-2" class = "w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class = "block text-sm font-medium mb-2 text-gray-800">Grupo</label>
+                    <input type = "text" placeholder = "A" class = "w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
          </div>
+         <button class = "px-6 py-2 rounded-lg btn-guinda font-medium"> Crear grupo </button>
+         </div>
+     <!--  <div class = "tabs-container">
+            <button class = "tab-btn active"><i class = "fas fa-calendar"></i>Horarios</button>
+            <button class = "tab-btn"><i class = "fas fa-book"></i>Oferta academica</button>
+            <button class = "tab-btn"><i class = "fas fa-users"></i>Asignacion</button>
+            <button class = "tab-btn"><i class = "fas fa-file-alt"></i>Reportes</button>
+        </div>
+--> 
+        
 </body>
 
 </html>
