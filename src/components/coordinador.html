@@ -34,13 +34,24 @@
         </div>
 
         <!-- Navegador-->
-        <div class = "tabs-container">
+         <div class = "bg-white rounded-lg custom-shadow overflow-hidden">
+            <div class = "border-b border-gray-200">
+                <div class = "flex overflow-x-auto">
+                    <button onclick = "showTab('horarios')" id = "btn-horarios" class = "tab-btn active flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
+                        <i class = "fas fa-calendar-alt"></i>
+                        Horarios Alumnos
+                        
+                    </button>
+                </div>
+            </div>
+         </div>
+     <!--  <div class = "tabs-container">
             <button class = "tab-btn active"><i class = "fas fa-calendar"></i>Horarios</button>
             <button class = "tab-btn"><i class = "fas fa-book"></i>Oferta academica</button>
             <button class = "tab-btn"><i class = "fas fa-users"></i>Asignacion</button>
             <button class = "tab-btn"><i class = "fas fa-file-alt"></i>Reportes</button>
         </div>
-
+--> 
         <!-- Contenido de las pestañas -->
          <div class = "p-6">
             <div id = "horarios" class = "tab-content active space-y-6"></div>
@@ -75,6 +86,7 @@
                     </table>
                 </div>
             </div>
+            <button class = "px-6 py-2 rounded-lg btn-guinda font-medium"> registrar nuevo horario </button>
          </div>
          </div>
 </body>
