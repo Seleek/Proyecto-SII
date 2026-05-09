@@ -12,6 +12,43 @@
             --color-azul-tec: #1b396a;
             --color-fondo: #f8fafc;
         }
+          body {
+            background-color: var(--color-fondo);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .sidebar {
+            background-color: var(--color-guinda);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-btn.active {
+            color: var(--color-guinda);
+            border-bottom: 3px solid var(--color-guinda);
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .btn-guinda {
+            background-color: var(--color-guinda);
+            color: white;
+            transition: opacity 0.2s;
+        }
+        .btn-guinda:hover {
+            opacity: 0.9;
+        }
+        .priority-badge {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            color: white;
+            margin-left: 8px;
+        }
+        .priority-a { background-color: var(--color-guinda); }
+        .priority-b { background-color: var(--color-dorado); }
     </style>
     
 </head>
