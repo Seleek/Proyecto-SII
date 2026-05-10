@@ -61,186 +61,161 @@
             </div>
 
             <!-- Contenido de las pestañas -->
-         <div class = "p-6">
-            <div id = "horarios" class = "tab-content active space-y-6">
-            <div class = "flex items-start gap-2 p-4 rounded-lg" style = "background-color: var(--color-fondo);">
-                <i class = "fas fa-exclamarion-circle mt-1" style = "color: var(--color-dorado);"></i>
+        <div id = "oferta academica" class = "tab-pane">
+            <div class = "alert-box alert-warning">
                 <div>
-                    <p class = "text-sm text-gray-800"> Registrar los horarios de alumnos</p>
+                    <p class = "alert-text" style="color: #333"> Registrar los horarios de alumnos</p>
                 </div>
             </div>
-            <div>
-               <label for="alumno-select" class = "block text-sm font-medium mb-2 text-gray-800">Seleccionar alumno</label>
-               <select id="alumno-select" onchange = "updateAlumnoTable(this.value)" class = "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-900 outline-none">
+
+            <div class = "form-field mb-24">
+               <label>Seleccionar alumno</label>
+               <select id="selectAlumno">
                 <option value = "">Seleccionar alumno</option>
-                <option value="1" >Alumno 1</option>
-                <option value="2" >Alumno 2</option>
                </select>
             </div>
-            <div id = "alumno-data-container" class="hidden">
-                <div class = "bg-white border border-gray-200 rounded-lg overflow-hidden">
-                    <table class = "w-full">
-                        <thead style = "background-color: var(--color-guinda);">
+
+            <div id = "horariosTable" style="display:none;">
+                <div class = "table-container">
+                    <table>
+                        <thead>
                             <tr>
-                                <th class = "px-4 py-3 text-left text-sm font-medium text-white">Materia</th>
-                                <th class = "px-4 py-3 text-left text-sm font-medium text-white">Grupo</th>
-                                <th class = "px-4 py-3 text-left text-sm font-medium text-white">Semestre</th>
-                                <th class = "px-4 py-3 text-left text-sm font-medium text-white">Estado</th>
+                                <th>Materia</th>
+                                <th>Grupo</th>
+                                <th>Semestre</th>
+                                <th>Estado</th>
                             </tr>
                         </thead>
                         <tbody id = "horarios-tbody">
-                            <!--Dinamico-->
                         </tbody>"
                     </table>
                 </div>
             </div>
-            <button class = "px-6 py-2 rounded-lg btn-guinda font-medium"> registrar nuevo horario </button>
-         
+            <button class = "btn btn-burgundy mt24">Registrar Nuevo Horario</button> 
          </div>
 
-         <div id = "oferta" class = "tab-content space-y-6">
-            <div class = "flex items-start gap-2 p-4 rounded-lg" style = "background-color: #f3f3e7;">
-                <i class = "fas fa-exclamation-circle mt-1" style="color: var(--color-dorado);"></i>
+         <div id = "oferta" class = "tab-pane">
+            <div class = "alert-box alert-warning">
                 <div>
-                    <p class = "text-sm text-gray-800"> Gestionar la oferta académica</p>
+                    <p class = "alert-text" style="color: #333;"> Gestionar la oferta académica</p>
                 </div>
             </div>
-            <div class = "grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class = "block text-sm font-medium mb-2 text-gray-800">Materia</label>
-                    <select class = "w-full px-4 py2 border border-gray-300 rounded-lg">
-                        <option>Calculo diferencial</option>
+            <div class = "form-grid">
+                <div class = "form-field">
+                    <label>Materia</label>
+                    <select>
+                        <option>-- Seleccione materia --</option>
                     </select>
                 </div>
-                <div>
-                    <label class = "block text-sm font-medium mb-2 text-gray-800">Docente</label>
-                    <select class = "w-full px-4 py2 border border-gray-300 rounded-lg">
-                        <option>Ing. Algara</option>
+                <div class = "form-field">
+                    <label>Docente</label>
+                    <select>
+                        <option>-- Seleccione docente --</option>
                     </select>
                 </div>
-                <div>
-                    <label class = "block text-sm font-medium mb-2 text-gray-800">Semestre</label>
-                    <input type = "text" placeholder = "2026-2" class = "w-full px-4 py-2 border border-gray-300 rounded-lg">
+                <div class = "form-field">
+                    <label>Semestre</label>
+                    <input type = "text" placeholder = "2026-2">
                 </div>
-                <div>
-                    <label class = "block text-sm font-medium mb-2 text-gray-800">Grupo</label>
-                    <input type = "text" placeholder = "A" class = "w-full px-4 py-2 border border-gray-300 rounded-lg">
+                <div class = "form-field">
+                    <label>Grupo</label>
+                    <input type = "text" placeholder = "A">
                 </div>
          </div>
-         <button class = "px-6 py-2 rounded-lg btn-guinda font-medium"> Crear grupo </button>
+         <button class = "btn btn-burgundy mb-24"> Crear grupo </button>
+         <div class = "table-container">
+            <h3 style = "padding: 12px 16px; background:#f5f5f5; color:#333; margin:0;">Grupos Existentes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Materia</th>
+                        <th>Grupo</th>
+                        <th>Semestre</th>
+                        <th>Docente</th>
+                    </tr>
+                </thead>
+                <tbody id="gruposTableBody">
+                </tbody>
+            </table>
+        </div>
          </div>
          
-        <div id = "asignacion" class = "tab-content space-y-6">
-            <div class = "flex items-start gap-2 p-4 rounded-lg" style = background-color:#fef3e7;>
-                <i class = "fas fa-exclamation-circle mt-1" style = "color:var (--color-dorado);"></i>
+        <div id = "asignacion" class = "tab-pane">
+            <div class = "alert-box alert-warning">
                 <div>
-                    <p class = "text-sm text-gray-800"> Asignar materias directamente a los alumnos</p>
+                    <p class = "alert-text" style="color:#333;"> Asignar materias directamente a los alumnos</p>
                 </div>
             </div>
-            <div class ="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class = "block text-sm font-medium mb-2 text-gray-800">Alumno</label>
-                    <select class = "w-full px-4 py-2 border border-gray-300 rounded-lg">
-                        <option>-- seleccione --</option>
+
+            <div class ="form-grid">
+                <div class = "form-field">
+                    <label>Alumno</label>
+                    <select>
+                        <option>-- Seleccione alumno --</option>
                     </select>
                 </div>
-                <div>
-                    <label class = "block text-sm font-medium mb-2 text-gray-800">Asignar materia</label>
-                    <select class = "w-full px-4 py-2 border border-gray-300 rounded-lg">
-                        <option>-- seleccione --</option>
+                <div class = "form-field">
+                    <label>Grupo</label>
+                    <select>
+                        <option>-- Seleccione grupo --</option>
                     </select>
                 </div>
             </div>
-            <button class = "px-6 py-2 rounded-lg btn-guinda font-medium"> Asignar materia </button>
+
+            <button class = "btn btn-burgundy mb-24"> Asignar materia </button>
+
+            <div class = "table-container">
+                <h3 style="padding:12px 16px; background: #f5f5f5; color:#333; margin:0;">Inscripciones Actuales</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Alumno</th>
+                            <th>Materia</th>
+                            <th>Grupo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inscripcionesTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+        <div id="ajustes" class = "tab-pane">
+            <div class = "alert-box alert-info">
+                <div>
+                    <p class = "alert-text" style="color:#333;"> Ajustar grupos y horarios designados</p>
+                </div>
+            </div>
+
+            <div id = "gruposAjuste"></div>
         </div>
 
-         <div id = "ajustes" class = "tab-content space-y-6">
-            <div class = "flex-items-start gap-2 p-4 rounded-lg" style = "background-color:#e3f2fd;">
-                <i class = "fas fa-exclamation-circle mt-1" style = "color: var(--color-azul-tec);"></i>
+         <div id="reportes" class = "tab-pane">
+            <div class = "alert-box alert-info">
                 <div>
-                    <p class = "text-sm text-gray-800"> Ajustar grupos y horarios designados</p>
-                </div>
-         </div>
-         <div class = "bg-white border-gray-200 rounded-lg p-4 flex justify-between items-center">
-            <div>
-                <h4 class = "font-medium text-lg"> Programacion web - Grupo A </h4>
-                <p class = "text-sm text-gray-600">Docente: Ing. Algara</p>
-            </div>
-            <button class = "px-4 py-2 rounded-lg text-white text-sm font-medium" style = "background-color: var(--color-dorado);">Editar</button>
-         </div>
-         </div>
-
-         <div id="reportes" class = "tab-content space y-6">
-            <div class = "flex items-start fap-2 p-4 rounded-lg" style = "background-color:#e3f2fd;">
-                <i class = "fas fa-info-circle mt-1" style = "color: var(--color-azul-tec);"></i>
-                <div>
-                    <p class = "text-sm-text-gray-800">Consultar reportes</p>
+                    <p class = "alert-text" style="color:#333;">Consultar reportes</p>
                 </div>
             </div>
-            <div class = "grid grid-cols-1 md:gid-cols-3 gsp-4">
-                <div class= "bg-white border border-gray-200 rounded-lg p-6 text-center">
-                    <div class = "text 3x1 font-bold mb-2" style= "color: var(--color-guinda);">120</div>
-                    <p class = "text-sm text-gray-600">Alumnos Activos</p>
+            <div class = "stats-grid">
+                <div class= "stat-card">
+                    <div class = "stat-number" style="color: #621132;" id="totalAlumnos">0</div>
+                    <div class="stat-label">Alumnos Activos</div>
                 </div>
-                <div class= "bg-white border border-gray-200 rounded-lg p-6 text-center">
-                    <div class = "text 3x1 font-bold mb-2" style= "color: var(--color-guinda);">15</div>
-                    <p class = "text-sm text-gray-600">Grupos Activos</p>
+                <div class= "stat-card">
+                    <div class = "stat-number" style="color: #621132;" id="totalGrupos">0</div>
+                    <div class="stat-label">Grupos Activos</div>
                 </div>
-                <div class= "bg-white border border-gray-200 rounded-lg p-6 text-center">
-                    <div class = "text 3x1 font-bold mb-2" style= "color: var(--color-guinda);">450</div>
-                    <p class = "text-sm text-gray-600">Inscripciones</p>
+                <div class= "stat-card">
+                    <div class = "stat-number" style="color: #621132;" id="totalInscripciones">0</div>
+                    <div class="stat-label">Inscripciones</div>
                 </div>
-            </div>
-            <div class = "space-y-2">
-                <button class = "w-full text-left px-4 py-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition font-medium">Reporte de Alumnos en curso especial</button>
-                <button class = "w-full text-left px-4 py-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition font-medium">Reporte de Rendimiento academico</button>
             </div>
          </div>
      </div>
-         </div>
+    </div>
     </main>
    </div>
-   <script>
-    function showTab(tabId){
-        document.querySelectorAll('.tab-content').forEach(tab => {
-            tab.classList.remove('active');
-        });
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        document.getElementById(tabId).classList.add('active');
-        document.getElementById('btn-' + tabId).classList.add('active');
-    }
-    function updateAlumnoTable(val){
-        const container = document.getElementById('alumno-data-container');
-        const tbody = document.getElementById('horarios-tbody');
-        if(val){
-            container.classList.add('hidden');
-            return;
-        }
 
-        container.classList.remove('hidden');
-
-        const data = [
-            {materia:'Estructura de Datos', grupo:'A', semestre:'4', estado:'Inscrito'},
-            {materia:'Calculo Integral', grupo:'B', semestre:'6', estado:'Inscrito'},
-            {materia:'Programacion Web', grupo:'A', semestre:'2', estado:'Inscrito'}
-    ];
-        tbody.innerHTML = data.map((item, idx) => `
-            <tr style="background-color: ${idx % 2 === 0 ? 'white' : '#f5f5f5'}">
-                <td class="px-4 py-3 text-sm text-gray-800">${item.materia}</td>
-                <td class="px-4 py-3 text-sm text-gray-800">${item.grupo}</td>
-                <td class="px-4 py-3 text-sm text-gray-800">${item.semestre}</td>
-                <td class="px-4 py-3 text-sm">
-                    <span class="px-2 py-1 rounded-full text-xs" style="background-color:#d4edda; color:#155724;">
-                        ${item.estado}
-                    </span>
-                </td>
-            </tr>
-        `).join('');
-
-    }
-   </script>     
 </body>
 
 </html>
