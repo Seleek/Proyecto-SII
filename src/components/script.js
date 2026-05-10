@@ -90,3 +90,39 @@ function loadUserInfo() {
     return usuario;
 }
 
+function setupTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-pane');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+
+            tabButtoins.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            this.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+}
+
+function getMateriaById(id) {
+    return materias.find(m => m.id_materia === id);
+}
+
+function getGrupoById(id) {
+    return grupos.find(g => g.id_grupo === id);
+}
+
+function getDocenteById(id) {
+    return docentes.find(d => d.id_docente === id);
+}
+
+function getAlumnoById(id) {
+    return alumnos.find(a => a.id_alumno === id);
+}
+
+function getUsuarioById(id) {
+    return usuarios.find(u => u.id_usuario === id);
+}
