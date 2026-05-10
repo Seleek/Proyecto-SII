@@ -9,28 +9,28 @@ const usuarios = [
     {
         id_usuario: 2,
         nombre: 'Dra. María López Hernández',
-        correo: 'maria.lopez@universidad.edu.mx',
+        correo: 'maria.lopez@mochis.tecnm.mx',
         password: 'coord123',
         rol: 'coordinador'
     },
     {
         id_usuario: 3,
         nombre: 'Ana Martínez Silva',
-        correo: 'ana.martinez@estudiante.edu.mx',
+        correo: 'ana.martinez@mochis.tecnm.mx',
         password: 'alumno123',
         rol: 'alumno'
     },
     {
         id_usuario: 4,
         nombre: 'Ing. Carlos Rodríguez',
-        correo: 'carlos.rodriguez@universidad.edu.mx',
+        correo: 'carlos.rodriguez@mochis.tecnm.mx',
         password: 'profesor123',
         rol: 'docente'
     },
     {
         id_usuario: 5,
         nombre: 'Pedro Sánchez Gómez',
-        correo: 'pedro.sanchez@estudiante.edu.mx',
+        correo: 'pedro.sanchez@mochis.tecnm.mx',
         password: 'alumno123',
         rol: 'alumno'
     }
