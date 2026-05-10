@@ -34,38 +34,30 @@
         </header>
 
     
-    <main class = "flex-1 p-4 md:p-8 space-y-6">
-        <div class = "bg-white rounded-lg custom-shadow p-6" style="border-left: 4px solid var(--color-guinda);">
-            <h2 class = "text-2x1 font-bold mb-2" style ="color: var(--color-guinda);">Bienvenido, Coordinador</h2>
-            <p class = "text-gray-700">Panel de control del coordinador academico</p>
+    <main class = "dashboard-main">
+        <div class = "welcome-card" style = "border-left: 4px solid #621132;">
+            <h2 style="color: #621132; font-size: 24px; margin-bottom: 8px;">Bienvenido</h2>
+            <p style="color: #333;">Panel de control del coordinador academico</p>
             
         </div>
 
-        <!-- Navegador-->
-         <div class = "bg-white rounded-lg custom-shadow overflow-hidden">
-            <div class = "border-b border-gray-200">
-                <div class = "flex overflow-x-auto">
-                    <button onclick = "showTab('horarios')" id = "btn-horarios" class = "tab-btn active flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
-                        <i class = "fas fa-calendar-alt"></i>
+        <div class = "card">
+            <div class = "tabs-container">
+                    <button class = "tab-button active" data-tab = "horarios">
                         Horarios Alumnos        
                     </button>
-                    <button onclick = "showTab('oferta')" id = "btn-oferta" class = "tab-btn flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
-                        <i class = "fas fa-book-open"></i>
+                    <button class = "tab-button" data-tab = "oferta">
                         Oferta Academica
                     </button>
-                    <button onclick = "showTab('asignacion')" id = "btn-asignacion" class = "tab-btn flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
-                        <i class = "fas fa-users"></i>
+                    <button class = "tab-button" data-tab = "asignacion">
                         Asignación
                     </button>
-                    <button onclick = "showTab('ajustes')" id = "btn-ajustes" class = "tab-btn flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
-                        <i class = "fas fa-cog"></i>
+                    <button class = "tab-button" data-tab = "ajustes">
                         Ajustes Grupos
                     </button>
-                    <button onclick = "showTab('reportes')" id = "btn-reportes" class = "tab-btn flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors relative text-gray-500">
-                        <i class = "fas fa-file-alt"></i>
+                    <button class = "tab-button" data-tab = "reportes">
                         Reportes
                     </button>
-                </div>
             </div>
 
             <!-- Contenido de las pestañas -->
