@@ -4,72 +4,34 @@
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">\
     <title>Coordinador</title>
-    <link rel = "stylesheet" href = "../style">
-    <style>
-        :root {
-            --color-guinda: #621132;
-            --color-dorado: #9f7c45;
-            --color-azul-tec: #1b396a;
-            --color-fondo: #f8fafc;
-        }
-          body {
-            background-color: var(--color-fondo);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .sidebar {
-            background-color: var(--color-guinda);
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .tab-btn.active {
-            color: var(--color-guinda);
-            border-bottom: 3px solid var(--color-guinda);
-        }
-        .custom-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .btn-guinda {
-            background-color: var(--color-guinda);
-            color: white;
-            transition: opacity 0.2s;
-        }
-        .btn-guinda:hover {
-            opacity: 0.9;
-        }
-        .priority-badge {
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 9999px;
-            color: white;
-            margin-left: 8px;
-        }
-        .priority-a { background-color: var(--color-guinda); }
-        .priority-b { background-color: var(--color-dorado); }
-    </style>
-    
+    <link rel = "stylesheet" href = "../styles.css">
+
 </head>
-<body class = "min-h-screen">
+<body class = "dashboard-container">
     <div class = "flex flex-col md:flex-row min-h-screen">
 
-        <aside class = "w-full mid:w-64 sidebar text-white p-6 flex flex-col">
-            <div class = "mb-8">
-                <h1 class = "text-xl font-bold border-b border-white/20 pb-4">SII</h1>
+        <header class = "dashboard-header">
+            <div class = "header-content">
+               <div class = "header-left">
+                    <svg class="header-icon" fill="white" viewBox="0 0 24 24">
+                        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                    </svg>
+                    <div>
+                        <h1 class = "header-title">Sistema Integral de Informacion</h1>
+                        <p class = "header-role" id="userRole">coordinador</p>
+                    </div>
+               </div>
+               <div class = "header-right">
+                    <div class = "user-info">
+                        <p class = "user-name" id="userName"></p>
+                        <p class = "user-email" id="userEmail"></p>
+                    </div>
+                    <button class = "btn-logout" onclick="logout()">
+                        <span>Salir</span>
+                    </button>
+                </div>
             </div>
-            <nav class = "flex-grow space-y-4">
-                <div class = "flex items-center gap-3 p-2 bg-white/10 rounded">
-                    <i class = "fas fa-th-large"></i>
-                    <span>Dashboard</span>
-                </diSv>
-            </nav>
-            <button onclick = "alert ('Cerrando sesion...')" class = "mt-auto flex items-center gap-3 p-2 hover:bg-white/10 rounded transition">    
-                <i class = "fas fa-sign-out-alt"></i>
-                <span>Cerrar sesión</span>
-            </button>
-        </aside>
+        </header>
 
     
     <main class = "flex-1 p-4 md:p-8 space-y-6">
