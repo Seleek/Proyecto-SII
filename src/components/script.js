@@ -73,7 +73,7 @@ function loadUserInfo() {
         userRoleElement.textContent = roleName;
     }
 
-    const header = document.querySelector('dashboard-header');
+    const header = document.querySelector('.dashboard-header');
     if(header) {
         switch(usuario.rol) {
             case 'coordinador':
