@@ -10,7 +10,7 @@ let registrosAsistencia = [
 ];
 
 document.addEventListener('DOMContentLoaded', function (){
-    cont usuario = loadUserInfo();
+    const usuario = loadUserInfo();
     if (!usuario || usuario.rol !== 'personal'){
         window.locarion.href = 'index.html';
         return;
