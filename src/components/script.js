@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     case 'alumno':
                         window.location.href = 'alumno.html';
                         break;
+                    case 'personal':
+                        window.location.href = 'personal.html';
+                        break;
                 }
             } else {
                 errorMessage.textContent = 'Correo o contraseña incorrectos.';
@@ -98,7 +101,7 @@ function setupTabs() {
         button.addEventListener('click', function() {
             const tabId = this.getAttribute('data-tab');
 
-            tabButtoins.forEach(btn => btn.classList.remove('active'));
+            tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
 
             this.classList.add('active');

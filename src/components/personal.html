@@ -45,6 +45,8 @@
                     </div>
 
                     <div class = "tab-content">
+
+
                         <div id="checador" class="tab-pane active">
                             <div class = "alert-box alert-warning">
                                 <div>
@@ -89,9 +91,11 @@
                                     </table>
                                 </div>
                             </div>
+                        </div>
 
                             <div id = "vehicular" class="tab-pane">
                                 <div class = "alert-box alert-success">
+                                    <div>
                                     <p class = "alert-text" style="color:#333;">Acceder al control vehicular para gestionar los vehiculos institucionales</p>
                                 </div>
                             </div>
@@ -109,9 +113,38 @@
                                     <div class="stat-number" id="statMantenimiento" style = "color:#621132;">0</div>
                                     <div class="stat-label">Mantenimiento</div>
                                 </div>
+                            </div>
+
+                            <h3 style ="color:#333;margin-bottom:12px;">Flota Vehicular</h3>
+                            <div class="flota-grid" id="flotaGrid"></div>
+                            <div style = "display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                                <h3 style = "color:#333;margin:0;">Registro de Movimientos</h3>
+                                <button id="btnNuevaSalida" class="btn" style="background:#9F7C45;color:white;">Nueva Salida</button>
+                            </div>
+
+                            <div class="table-container" style="overflow-x:auto;">
+                                <table>
+                                    <thead style="background:#9F7C45;">
+                                        <tr>
+                                            <th>Vehiculos</th>
+                                            <th>Conductor</th>
+                                            <th>Destino / Proposito</th>
+                                            <th style = "text-align:center;">Fecha</th>
+                                            <th style = "text-align:center;">Salida</th>
+                                            <th style = "text-align:center;">Regreso</th>
+                                            <th style = "text-align:center;">Estado</th>
+                                            <th style = "text-align:center;">Accion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyVehicular"></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </main>
+        </div>
+    <script src = "script.js"></script>
     </body>
+</html>
