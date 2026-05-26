@@ -145,6 +145,29 @@
                 </div>
             </main>
         </div>
+        <div id = "modalAsistencia" class="modal-overlay">
+            <div class = "modal-box">
+                <h3 class = "modal-title" id = "modalAsistenciaTitulo" style="color:#9F7C45;">Registrar Entrada</h3>
+                <div class="form-field mb-24">
+                    <label>Nombre del Empleado</label>
+                    <input type = "text" id = "inputNombrePersona" placeholder="Nombre completo">
+                </div>
+                <div class = "form-field mb-24">
+                    <label>Departamento</label>
+                    <input type = "text" id="inputDepartamento" placeholder = "Departamento o area">
+                </div>
+                <div class="form-field mb-24">
+                    <label>Hora</label>
+                    <input type = "time" id="inputHoraAsistencia">
+                </div>
+                <div class = "modal-actions">
+                    <button id="btnGuardarAsistencia" class="btn" style="background:#9F7C45;color:white;">Guardar</button>
+                    <button id="btnCancelarAsistencia" class="btn" style="background:white;color:#333;border:1px solid #e0e0e0;">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        
     <script src = "script.js"></script>
     </body>
 </html>
