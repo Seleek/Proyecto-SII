@@ -19,3 +19,21 @@ document.addEventListener('DOMContentLoaded', function (){
     initChecador();
     initVehicular();
 });
+
+function initChecador() {
+    const today = '2026-05-25';
+    document.getElementById('fechaFiltro').value = today;
+    renderTablaAsistencia(today);
+
+    document.getElementById('fechaFiltro').addEventListener('change', function () {
+        renderTablaAsistencia(this.value);
+    });
+    document.getElementById('btnRegistrarEntrada').addEventListener('click', function () {
+        abrirModalAsistencia('entrada');
+    });
+    document.getElementById('btnRegistrarSalida').addEventListener('click', function () {
+        abrirModalAsistencia('salida');
+    });
+    document.getElementById('btnGuardarAsistencia').addEventListener('click', guardarAsistencia);
+    document.getElementById('btnCancelarAsistencia').addEventListener('click', cerrarModalAsistencia);
+}
