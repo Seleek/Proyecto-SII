@@ -8,3 +8,14 @@ let registrosAsistencia = [
     { id_registro: 7, nombre_persona: 'Ing. Carlos Rodríguez', departamento: 'Ingeniería en Sistemas', fecha: '2026-05-24', hora_entrada: null, hora_salida: null, estado: 'ausente' },
     { id_registro: 8, nombre_persona: 'Rosa García Mendoza', departamento: 'Servicios Escolares', fecha: '2026-05-24', hora_entrada: '08:10', hora_salida: '15:05', estado: 'completo' },
 ];
+
+document.addEventListener('DOMContentLoaded', function (){
+    cont usuario = loadUserInfo();
+    if (!usuario || usuario.rol !== 'personal'){
+        window.locarion.href = 'index.html';
+        return;
+    }
+    setupTabs();
+    initChecador();
+    initVehicular();
+});

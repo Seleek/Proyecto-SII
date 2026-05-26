@@ -72,6 +72,9 @@ function loadUserInfo() {
             case 'alumno':
                 roleName = 'Alumno';
                 break;
+            case 'personal': 
+                roleName = 'Personal General';
+                break;
         }
         userRoleElement.textContent = roleName;
     }
@@ -87,6 +90,9 @@ function loadUserInfo() {
                 break;
             case 'alumno':
                 header.style.backgroundColor = '#10312b';
+                break;
+            case 'personal':
+                header.style.backgroundColor = '#9F7C45';
                 break;
         }
     }
