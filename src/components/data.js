@@ -33,6 +33,13 @@ const usuarios = [
         correo: 'pedro.sanchez@mochis.tecnm.mx',
         password: 'alumno123',
         rol: 'alumno'
+    },
+    {
+        id_usuario: 6,
+        nombre: 'Rosa García Mendoza',
+        correo: 'rosa.garcia@universidad.edu.mx',
+        password: 'personal123',
+        rol: 'personal'
     }
 ];
 

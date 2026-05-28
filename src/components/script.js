@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     case 'alumno':
                         window.location.href = 'alumno.html';
                         break;
+                    case 'personal':
+                        window.location.href = 'personal.html';
+                        break;
                 }
             } else {
                 errorMessage.textContent = 'Correo o contraseña incorrectos.';
@@ -69,6 +72,9 @@ function loadUserInfo() {
             case 'alumno':
                 roleName = 'Alumno';
                 break;
+            case 'personal': 
+                roleName = 'Personal General';
+                break;
         }
         userRoleElement.textContent = roleName;
     }
@@ -85,6 +91,9 @@ function loadUserInfo() {
             case 'alumno':
                 header.style.backgroundColor = '#10312b';
                 break;
+            case 'personal':
+                header.style.backgroundColor = '#9F7C45';
+                break;
         }
     }
     return usuario;
@@ -98,7 +107,7 @@ function setupTabs() {
         button.addEventListener('click', function() {
             const tabId = this.getAttribute('data-tab');
 
-            tabButtoins.forEach(btn => btn.classList.remove('active'));
+            tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
 
             this.classList.add('active');

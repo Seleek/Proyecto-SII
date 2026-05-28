@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang = "es">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Dashboard Personal General</title>
+        <link rel = "stylesheet" href = "../styles.css">
+    </head>
+    <body>
+        <div class = "dashboard-container">
+
+            <header class = "dashboard-header">
+                <div class = "header-left">
+                    <sgv class = "logo-icon" fill = "white" viewBox="0 0 24 24">
+                        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                    </sgv>
+                    <div>
+                        <h1 class = "main-title">Sistema Integral de Informacion</h1>
+                        <p class = "header-role" id = "userRole">Personal General</p>
+                    </div>
+                </div>
+                <div class = "header-right">
+                    <div class = "user-info">
+                        <p class="user-name" id="userName"></p>
+                        <p class="user-email" id="userEmail"></p>
+                    </div>
+                    <button class="btn-logout" onclick="logout()">Cerrar Sesión</button>
+                </div>
+            </header>
+        
+            <main class = "dashboard-main">
+                <div class="welcome-card" style="border-left: 4px solid #9F7C45;">
+                    <h2 style="color: #9F7C45;font-size:24px;margin-bottom:8px">Bienvenido</h2>
+                    <p style="color:#333;">Panel de control</p>
+                </div>
+
+                <div class = "card">
+                    <div class = "tabs-container">
+                        <button class = "tab-button active" data-tab = "checador">
+                            Registro de Asistencia
+                        </button>
+                        <button class = "tab-button"data-tab = "vehicular">
+                            Control Vehicular
+                        </button>
+                    </div>
+
+                    <div class = "tab-content">
+
+
+                        <div id="checador" class="tab-pane active">
+                            <div class = "alert-box alert-warning">
+                                <div>
+                                    <p class = "alert-text" style="color:#333;">Consultar el registro de asistencia para validar entrada y salida de personal.</p>
+                                </div>
+                            </div>
+                            <div style = "display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px;margin-bottom:24px;">
+                                <div class="form-field" style="margin:0;">
+                                    <label>Fecha</label>
+                                    <input type="date" id="fechaFiltro" style="width:180px;">
+                                </div>
+                                <button id="btnRegistrarEntrada"class="btn" style = "background:#10312B;color:white;">Registrar Entrada</button>
+                                <button id="btnRegistrarSalida"class="btn" style = "background:#10312B;color:white;">Registrar Salida</button>
+                            </div>
+                            <div class="stats-grid" style = "margin-bottom:24px;">
+                                <div class = "stat-box">
+                                    <div class = "stat-number" id="statTotal" style="color:#9F7C45;">0</div>
+                                    <div class="stat-label">Entrada y salida</div>
+                                </div>
+                                <div class = "stat-box">
+                                    <div class = "stat-number" id="statSoloEntrada" style="color:1B396A;">0</div>
+                                    <div class = "stat-label">Solo entrada</div>
+                                </div>
+                                
+                                    <div class = "stat-box">
+                                        <div class ="stat-number" id="statAusentes" style = "color:#621132;">0</div>
+                                        <div class = "stat-label">Ausentes</div>
+                                    </div>
+                                </div>
+                                <div class = "table-container">
+                                    <table>
+                                        <thead style = "background:#9F7C45">
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Departamento</th>
+                                                <th style = "text-align:center;">Entrada</th>
+                                                <th style = "text-align:center;">Salida</th>
+                                                <th style = "text-align:center;">Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id = "tbodyAsistencia"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                       
+
+                            <div id = "vehicular" class="tab-pane">
+                                <div class = "alert-box alert-success">
+                                    <div>
+                                    <p class = "alert-text" style="color:#333;">Acceder al control vehicular para gestionar los vehiculos institucionales</p>
+                                </div>
+                            </div>
+
+                            <div class="stats-grid" stryle="margin-bottom:24px;">
+                                <div class="stat-box">
+                                    <div class="stat-number" id = "statDisponibles" style = "color:10312B;">0</div>
+                                    <div class = "stat-label">Disponibles</div>
+                                </div>
+                                <div class = "stat-box">
+                                    <div class = "stat-number" id = "statEnUso" style = "color:#9F7C45;">0</div>
+                                    <div class = "stat-label">En uso</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-number" id="statMantenimiento" style = "color:#621132;">0</div>
+                                    <div class="stat-label">Mantenimiento</div>
+                                </div>
+                            </div>
+
+                            <h3 style ="color:#333;margin-bottom:12px;">Flota Vehicular</h3>
+                            <div class="flota-grid" id="flotaGrid"></div>
+                            <div style = "display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                                <h3 style = "color:#333;margin:0;">Registro de Movimientos</h3>
+                                <button id="btnNuevaSalida" class="btn" style="background:#9F7C45;color:white;">Nueva Salida</button>
+                            </div>
+
+                            <div class="table-container" style="overflow-x:auto;">
+                                <table>
+                                    <thead style="background:#9F7C45;">
+                                        <tr>
+                                            <th>Vehiculos</th>
+                                            <th>Conductor</th>
+                                            <th>Destino / Proposito</th>
+                                            <th style = "text-align:center;">Fecha</th>
+                                            <th style = "text-align:center;">Salida</th>
+                                            <th style = "text-align:center;">Regreso</th>
+                                            <th style = "text-align:center;">Estado</th>
+                                            <th style = "text-align:center;">Accion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyVehicular"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+        <div id = "modalAsistencia" class="modal-overlay">
+            <div class = "modal-box">
+                <h3 class = "modal-title" id = "modalAsistenciaTitulo" style="color:#9F7C45;">Registrar Entrada</h3>
+                <div class="form-field mb-24">
+                    <label>Nombre del Empleado</label>
+                    <input type = "text" id = "inputNombrePersona" placeholder="Nombre completo">
+                </div>
+                <div class = "form-field mb-24">
+                    <label>Departamento</label>
+                    <input type = "text" id="inputDepartamento" placeholder = "Departamento o area">
+                </div>
+                <div class="form-field mb-24">
+                    <label>Hora</label>
+                    <input type = "time" id="inputHoraAsistencia">
+                </div>
+                <div class = "modal-actions">
+                    <button id="btnGuardarAsistencia" class="btn" style="background:#9F7C45;color:white;">Guardar</button>
+                    <button id="btnCancelarAsistencia" class="btn" style="background:white;color:#333;border:1px solid #e0e0e0;">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    <script src = "data.js"></script>
+    <script src = "script.js"></script>
+    <script src = "personal.js"></script>
+    </body>
+</html>
